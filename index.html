@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How CriteriaCue handles professional profile information, TypeSafe keys, and optional feedback.">
+  <title>Privacy Policy · CriteriaCue</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #14213d; background: #f6f7fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 860px; margin: 48px auto; padding: 40px; border: 1px solid #e1e4ed; border-radius: 18px; background: white; overflow-wrap: anywhere; }
+    .brand { color: #5d48e8; font-weight: 700; letter-spacing: .04em; }
+    h1 { margin: 18px 0 12px; font-size: 38px; letter-spacing: -.04em; }
+    h2 { margin: 32px 0 10px; font-size: 21px; }
+    p, li, dd, dt { font-size: 15px; line-height: 1.75; }
+    p, ul { margin: 10px 0; }
+    li { margin: 6px 0; }
+    a { color: #5140bf; overflow-wrap: anywhere; }
+    dt { font-weight: 700; margin-top: 14px; }
+    dd { margin: 0; }
+    .meta { color: #5d6578; font-size: 13px; }
+    .contact { margin-top: 34px; padding-top: 18px; border-top: 1px solid #e1e4ed; }
+    @media (max-width: 600px) { main { margin: 12px; padding: 24px; } h1 { font-size: 32px; } }
+  </style>
+</head>
+<body>
+<main>
+  <div class="brand">CriteriaCue <span class="meta">· JEV-NATIVE</span></div>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Publisher / operator: minus<br>Effective date: 2026-09-24<br>Contact: <a href="mailto:support@minus.team">support@minus.team</a></p>
+
+  <h2>What CriteriaCue does</h2>
+  <p>CriteriaCue is a free Chrome extension that helps recruiters review authorized professional evidence against explicit, user-written role criteria. No CriteriaCue account or registration is required. You provide your own TypeSafe API key and service access; TypeSafe usage and charges are governed by your plan with TypeSafe.</p>
+  <p>The extension has no CriteriaCue application server, candidate database, payment system, or analytics. It does not rank candidates or make hiring decisions.</p>
+
+  <h2>Information the extension handles</h2>
+  <dl>
+    <dt>Roles, criteria, and preferences</dt>
+    <dd>Up to five role titles, one to five criteria per role, and the Auto-review preference are stored locally in Chrome extension storage. During a review, the criteria are sent directly to TypeSafe. Saved role titles are not included in that request.</dd>
+    <dt>Professional profile information</dt>
+    <dd>With your optional LinkedIn permission and while the side panel is open, the extension reads Basic information, About, Experience, and Education from the current individual LinkedIn profile as you scroll. This may include a person's name, professional headline, general location, employers, work history, and education. It does not request device geolocation, read LinkedIn messages, or collect general browsing history.</dd>
+    <dt>Current page and reading progress</dt>
+    <dd>The current profile URL, scroll position, and section boundaries are processed locally to scope capture, avoid duplicate events, and track reading progress. The profile URL and raw scroll position are not included in the TypeSafe request. No scrolling or browsing activity log is saved.</dd>
+    <dt>TypeSafe API key</dt>
+    <dd>Your key is stored in Chrome session storage by default. If you explicitly select “Remember on this browser,” it is saved in local extension storage on that device. This is not an operating-system keychain. The key is not synced by CriteriaCue and is sent only to TypeSafe as request authorization.</dd>
+    <dt>Review results</dt>
+    <dd>Captured profile text and returned judgments, confidence values, and source excerpts remain in page memory. A capture event can remain briefly in service-worker memory until acknowledged. Candidate text and results are not written to extension storage or sent to the CriteriaCue operator.</dd>
+  </dl>
+
+  <h2>When processing happens</h2>
+  <p>Auto-review is selected by default in Setup, and preference changes are saved immediately. Automatic review requires saved roles, a TypeSafe key, optional LinkedIn permission, and an open side panel. The extension observes the page as you scroll; it does not scroll, navigate, expand sections, or open profile-detail tabs for you.</p>
+  <p>Automatic review waits for readable Basic information, Experience, and Education and a briefly stable Education lower boundary. About is optional. If required sections have not been read at the observed profile end, you can explicitly choose to review the available information.</p>
+  <p>Turning Auto-review off pauses automatic TypeSafe requests while reading progress remains available. Closing the side panel stops further capture for that window. Closing the panel cannot recall data already transmitted. “Review again” explicitly sends the current capture for another review.</p>
+
+  <h2>TypeSafe processes review requests</h2>
+  <p>Professional text and explicit criteria are sent directly over HTTPS to TypeSafe at api.typesafe.ai. CriteriaCue does not proxy these requests or receive a copy. Role titles and the profile URL are excluded from the request; company names or education locations can still be present within the supplied professional text.</p>
+  <p>TypeSafe's processing and retention are governed by your agreement with TypeSafe. CriteriaCue cannot delete provider-held data. Review the <a href="https://typesafe.ai/legal/privacy-policy" rel="noreferrer">TypeSafe Privacy Policy</a> and <a href="https://typesafe.ai/legal/mca" rel="noreferrer">Customer Agreement</a> before processing candidate information. Only use candidate-provided or otherwise authorized material.</p>
+
+  <h2>Optional feedback and support</h2>
+  <p>Feedback in Setup or the side panel prepares an email draft addressed to support@minus.team. The draft contains only the text you type, feedback type, extension version, and entry point. It does not automatically attach a candidate profile, URL, role, result, API key, log, or screenshot. Do not include credentials or candidate records.</p>
+  <p>“Open email app” prepares a draft; you review and send it yourself. “Copy feedback” puts the draft on your system clipboard, where your device's clipboard settings apply. Closing the feedback dialog clears the extension's in-memory draft.</p>
+  <p>If you send an email, the operator receives the message, sender address, and normal email metadata through the support email provider. Feedback is used to answer requests and improve CriteriaCue, and does not subscribe you to marketing.</p>
+  <p>The support mailbox is provided by Tencent Enterprise Email on the operator’s own domain. We delete support correspondence from the support mailbox within 90 days after the issue is closed. You may request earlier deletion by emailing support@minus.team.</p>
+
+  <h2>Storage, deletion, and your choices</h2>
+  <ul>
+    <li>Edit or delete locally saved roles in Setup.</li>
+    <li>Use “Remove saved key” to clear session and remembered copies of your key. This does not revoke the key at TypeSafe.</li>
+    <li>Session-only keys clear with the relevant browser-session or extension lifecycle. Remembered keys stay until removed or the extension is uninstalled.</li>
+    <li>Close the side panel to stop capture, or revoke the optional LinkedIn permission in Chrome.</li>
+    <li>Uninstall the extension to remove its extension storage.</li>
+    <li>Email support@minus.team to request deletion of support correspondence. Data you sent to TypeSafe must be addressed under your TypeSafe agreement.</li>
+  </ul>
+
+  <h2>Limited use</h2>
+  <p>Information is used for the disclosed evidence-review functionality and related support. It is not sold, used for personalized advertising, or used to determine creditworthiness or eligibility for lending. CriteriaCue's handling and transfer of user data adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+  <h2>This policy website</h2>
+  <p>This page contains no tracking scripts, analytics, or forms. This policy website uses GitHub Pages for hosting. GitHub logs and stores visitors’ IP addresses for security purposes, including visits made without signing in. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub Privacy Statement</a>.</p>
+
+  <h2>Changes and contact</h2>
+  <p>We will update this policy when the product's data practices change. Material changes will be disclosed before they take effect where required. The effective date above identifies the current policy.</p>
+  <p class="contact">For privacy questions or support, contact <a href="mailto:support@minus.team">support@minus.team</a>.<br><span class="meta">JEV-NATIVE describes the architecture. It does not indicate TypeSafe partnership, certification, or endorsement. CriteriaCue is not affiliated with or endorsed by LinkedIn.</span></p>
+</main>
+</body>
+</html>
