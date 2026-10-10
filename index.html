@@ -28,11 +28,11 @@
 <main>
   <div class="brand">CriteriaCue <span class="meta">· JEV-NATIVE</span></div>
   <h1>Privacy Policy</h1>
-  <p class="meta">Publisher / operator: minus<br>Effective date: 2026-09-24<br>Contact: <a href="mailto:support@minus.team">support@minus.team</a></p>
+  <p class="meta">Publisher / operator: minus<br>Updated: 2026-10-10 · Optional analytics applies from extension version 0.2.9<br>Contact: <a href="mailto:support@minus.team">support@minus.team</a></p>
 
   <h2>What CriteriaCue does</h2>
   <p>CriteriaCue is a free Chrome extension that helps recruiters review authorized professional evidence against explicit, user-written role criteria. No CriteriaCue account or registration is required. You provide your own TypeSafe API key and service access; TypeSafe usage and charges are governed by your plan with TypeSafe.</p>
-  <p>The extension has no CriteriaCue application server, candidate database, payment system, or analytics. It does not rank candidates or make hiring decisions.</p>
+  <p>The extension has no CriteriaCue application server, candidate database, or payment system. Version 0.2.9 introduces optional usage analytics, off until you actively enable it. Older versions do not include extension analytics. It does not rank candidates or make hiring decisions.</p>
 
   <h2>Information the extension handles</h2>
   <dl>
@@ -57,6 +57,13 @@
   <p>Professional text and explicit criteria are sent directly over HTTPS to TypeSafe at api.typesafe.ai. CriteriaCue does not proxy these requests or receive a copy. Role titles and the profile URL are excluded from the request; company names or education locations can still be present within the supplied professional text.</p>
   <p>TypeSafe's processing and retention are governed by your agreement with TypeSafe. CriteriaCue cannot delete provider-held data. Review the <a href="https://typesafe.ai/legal/privacy-policy" rel="noreferrer">TypeSafe Privacy Policy</a> and <a href="https://typesafe.ai/legal/mca" rel="noreferrer">Customer Agreement</a> before processing candidate information. Only use candidate-provided or otherwise authorized material.</p>
 
+  <h2>Optional usage analytics (version 0.2.9 and later)</h2>
+  <p>Analytics are off by default for both new and existing users. A visible notice in Setup and the side panel explains this choice. Only after you select “Enable usage analytics” and grant the optional PostHog connection permission will the extension transmit limited usage events over HTTPS to PostHog’s US Cloud service, for minus to measure feature adoption and reliability.</p>
+  <p>Events cover opening Setup or the panel; role and key configuration success or failure; permission and Auto-review choices; reading milestones; review start, completion, cancellation, duration and fixed error categories; switching roles; deliberately opening evidence or captured text; and opening, copying or handing off feedback. Properties are limited to fixed categories, booleans, role/criterion counts, timings, version, development/production label and a random installation identifier. We do not collect role names or criteria, candidate text or identifiers, judgments or confidence values, API keys, webpage addresses, browsing history, feedback text, or arbitrary error messages in analytics.</p>
+  <p>The measurement ID is generated randomly and saved in local extension storage only after consent. It links consented usage across days to estimate repeat use, without a CriteriaCue account. It is separate from website visitor estimates and is not linked to your LinkedIn account or candidate profiles. It identifies an installation, not a verified person. Reinstalling or disabling and re-enabling analytics creates a new measurement identity.</p>
+  <p>No replay, screenshots, automatic DOM/click/keyboard collection, person-profile creation, advertising identifiers, or geographic enrichment is enabled. Network requests necessarily expose the source IP address and ordinary connection metadata to PostHog; the extension does not add these as event properties or request geographic enrichment. PostHog’s processing and service-level retention are described in its <a href="https://posthog.com/privacy" rel="noreferrer">privacy policy</a>. We use the events for product measurement and reliability, not advertising or sale.</p>
+  <p>You can turn analytics off in Setup or the side panel without losing any core feature. This stops future requests, cancels pending requests where possible, and clears the local measurement ID. Requests already received cannot be recalled by this switch. Analytics are retained in the operator’s PostHog project under its retention settings until expiry or deletion; uninstalling or turning off does not delete previously received events. For a deletion request, copy the Measurement ID shown in the analytics controls before turning off and email support@minus.team. There is no persistent local event queue, and unsent events are discarded. Analytics failures do not prevent reviews.</p>
+
   <h2>Optional feedback and support</h2>
   <p>Feedback in Setup or the side panel prepares an email draft addressed to support@minus.team. The draft contains only the text you type, feedback type, extension version, and entry point. It does not automatically attach a candidate profile, URL, role, result, API key, log, or screenshot. Do not include credentials or candidate records.</p>
   <p>“Open email app” prepares a draft; you review and send it yourself. “Copy feedback” puts the draft on your system clipboard, where your device's clipboard settings apply. Closing the feedback dialog clears the extension's in-memory draft.</p>
@@ -74,7 +81,7 @@
   </ul>
 
   <h2>Limited use</h2>
-  <p>Information is used for the disclosed evidence-review functionality and related support. It is not sold, used for personalized advertising, or used to determine creditworthiness or eligibility for lending. CriteriaCue's handling and transfer of user data adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+  <p>Information is used for the disclosed evidence-review functionality, related support, and consented measurement of feature use and reliability. It is not sold, used for personalized advertising, or used to determine creditworthiness or eligibility for lending. CriteriaCue's handling and transfer of user data adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
 
   <h2>This policy website</h2>
   <p>This page contains no tracking scripts, analytics, or forms. This policy website uses GitHub Pages for hosting. GitHub logs and stores visitors’ IP addresses for security purposes, including visits made without signing in. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub Privacy Statement</a>.</p>
