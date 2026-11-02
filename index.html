@@ -1,11 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How CriteriaCue handles professional profile information, TypeSafe keys, and optional feedback.">
-  <title>Privacy Policy · CriteriaCue</title>
-  <style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="How CriteriaCue V2 handles accounts, job descriptions, professional profile information and optional analytics."><title>Privacy Policy · CriteriaCue</title><style>
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #14213d; background: #f6f7fb; }
     * { box-sizing: border-box; }
     body { margin: 0; }
@@ -22,73 +16,33 @@
     .meta { color: #5d6578; font-size: 13px; }
     .contact { margin-top: 34px; padding-top: 18px; border-top: 1px solid #e1e4ed; }
     @media (max-width: 600px) { main { margin: 12px; padding: 24px; } h1 { font-size: 32px; } }
-  </style>
-</head>
-<body>
-<main>
-  <div class="brand">CriteriaCue <span class="meta">· JEV-NATIVE</span></div>
-  <h1>Privacy Policy</h1>
-  <p class="meta">Publisher / operator: minus<br>Updated: 2026-10-10 · Optional analytics applies from extension version 0.2.9<br>Contact: <a href="mailto:support@minus.team">support@minus.team</a></p>
-
-  <h2>What CriteriaCue does</h2>
-  <p>CriteriaCue is a free Chrome extension that helps recruiters review authorized professional evidence against explicit, user-written role criteria. No CriteriaCue account or registration is required. You provide your own TypeSafe API key and service access; TypeSafe usage and charges are governed by your plan with TypeSafe.</p>
-  <p>The extension has no CriteriaCue application server, candidate database, or payment system. Version 0.2.9 introduces optional usage analytics, off until you actively enable it. Older versions do not include extension analytics. It does not rank candidates or make hiring decisions.</p>
-
-  <h2>Information the extension handles</h2>
-  <dl>
-    <dt>Roles, criteria, and preferences</dt>
-    <dd>Up to five role titles, one to five criteria per role, and the Auto-review preference are stored locally in Chrome extension storage. During a review, the criteria are sent directly to TypeSafe. Saved role titles are not included in that request.</dd>
-    <dt>Professional profile information</dt>
-    <dd>With your optional LinkedIn permission and while the side panel is open, the extension reads Basic information, About, Experience, and Education from the current individual LinkedIn profile as you scroll. This may include a person's name, professional headline, general location, employers, work history, and education. It does not request device geolocation, read LinkedIn messages, or collect general browsing history.</dd>
-    <dt>Current page and reading progress</dt>
-    <dd>The current profile URL, scroll position, and section boundaries are processed locally to scope capture, avoid duplicate events, and track reading progress. The profile URL and raw scroll position are not included in the TypeSafe request. No scrolling or browsing activity log is saved.</dd>
-    <dt>TypeSafe API key</dt>
-    <dd>Your key is stored in Chrome session storage by default. If you explicitly select “Remember on this browser,” it is saved in local extension storage on that device. This is not an operating-system keychain. The key is not synced by CriteriaCue and is sent only to TypeSafe as request authorization.</dd>
-    <dt>Review results</dt>
-    <dd>Captured profile text and returned judgments, confidence values, and source excerpts remain in page memory. A capture event can remain briefly in service-worker memory until acknowledged. Candidate text and results are not written to extension storage or sent to the CriteriaCue operator.</dd>
-  </dl>
-
-  <h2>When processing happens</h2>
-  <p>Auto-review is selected by default in Setup, and preference changes are saved immediately. Automatic review requires saved roles, a TypeSafe key, optional LinkedIn permission, and an open side panel. The extension observes the page as you scroll; it does not scroll, navigate, expand sections, or open profile-detail tabs for you.</p>
-  <p>Automatic review waits for readable Basic information, Experience, and Education and a briefly stable Education lower boundary. About is optional. If required sections have not been read at the observed profile end, you can explicitly choose to review the available information.</p>
-  <p>Turning Auto-review off pauses automatic TypeSafe requests while reading progress remains available. Closing the side panel stops further capture for that window. Closing the panel cannot recall data already transmitted. “Review again” explicitly sends the current capture for another review.</p>
-
-  <h2>TypeSafe processes review requests</h2>
-  <p>Professional text and explicit criteria are sent directly over HTTPS to TypeSafe at api.typesafe.ai. CriteriaCue does not proxy these requests or receive a copy. Role titles and the profile URL are excluded from the request; company names or education locations can still be present within the supplied professional text.</p>
-  <p>TypeSafe's processing and retention are governed by your agreement with TypeSafe. CriteriaCue cannot delete provider-held data. Review the <a href="https://typesafe.ai/legal/privacy-policy" rel="noreferrer">TypeSafe Privacy Policy</a> and <a href="https://typesafe.ai/legal/mca" rel="noreferrer">Customer Agreement</a> before processing candidate information. Only use candidate-provided or otherwise authorized material.</p>
-
-  <h2>Optional usage analytics (version 0.2.9 and later)</h2>
-  <p>Analytics are off by default for both new and existing users. A visible notice in Setup and the side panel explains this choice. Only after you select “Enable usage analytics” and grant the optional PostHog connection permission will the extension transmit limited usage events over HTTPS to PostHog’s US Cloud service, for minus to measure feature adoption and reliability.</p>
-  <p>Events cover opening Setup or the panel; role and key configuration success or failure; permission and Auto-review choices; reading milestones; review start, completion, cancellation, duration and fixed error categories; switching roles; deliberately opening evidence or captured text; and opening, copying or handing off feedback. Properties are limited to fixed categories, booleans, role/criterion counts, timings, version, development/production label and a random installation identifier. We do not collect role names or criteria, candidate text or identifiers, judgments or confidence values, API keys, webpage addresses, browsing history, feedback text, or arbitrary error messages in analytics.</p>
-  <p>The measurement ID is generated randomly and saved in local extension storage only after consent. It links consented usage across days to estimate repeat use, without a CriteriaCue account. It is separate from website visitor estimates and is not linked to your LinkedIn account or candidate profiles. It identifies an installation, not a verified person. Reinstalling or disabling and re-enabling analytics creates a new measurement identity.</p>
-  <p>No replay, screenshots, automatic DOM/click/keyboard collection, person-profile creation, advertising identifiers, or geographic enrichment is enabled. Network requests necessarily expose the source IP address and ordinary connection metadata to PostHog; the extension does not add these as event properties or request geographic enrichment. PostHog’s processing and service-level retention are described in its <a href="https://posthog.com/privacy" rel="noreferrer">privacy policy</a>. We use the events for product measurement and reliability, not advertising or sale.</p>
-  <p>You can turn analytics off in Setup or the side panel without losing any core feature. This stops future requests, cancels pending requests where possible, and clears the local measurement ID. Requests already received cannot be recalled by this switch. Analytics are retained in the operator’s PostHog project under its retention settings until expiry or deletion; uninstalling or turning off does not delete previously received events. For a deletion request, copy the Measurement ID shown in the analytics controls before turning off and email support@minus.team. There is no persistent local event queue, and unsent events are discarded. Analytics failures do not prevent reviews.</p>
-
-  <h2>Optional feedback and support</h2>
-  <p>Feedback in Setup or the side panel prepares an email draft addressed to support@minus.team. The draft contains only the text you type, feedback type, extension version, and entry point. It does not automatically attach a candidate profile, URL, role, result, API key, log, or screenshot. Do not include credentials or candidate records.</p>
-  <p>“Open email app” prepares a draft; you review and send it yourself. “Copy feedback” puts the draft on your system clipboard, where your device's clipboard settings apply. Closing the feedback dialog clears the extension's in-memory draft.</p>
-  <p>If you send an email, the operator receives the message, sender address, and normal email metadata through the support email provider. Feedback is used to answer requests and improve CriteriaCue, and does not subscribe you to marketing.</p>
-  <p>The support mailbox is provided by Tencent Enterprise Email on the operator’s own domain. We delete support correspondence from the support mailbox within 90 days after the issue is closed. You may request earlier deletion by emailing support@minus.team.</p>
-
-  <h2>Storage, deletion, and your choices</h2>
-  <ul>
-    <li>Edit or delete locally saved roles in Setup.</li>
-    <li>Use “Remove saved key” to clear session and remembered copies of your key. This does not revoke the key at TypeSafe.</li>
-    <li>Session-only keys clear with the relevant browser-session or extension lifecycle. Remembered keys stay until removed or the extension is uninstalled.</li>
-    <li>Close the side panel to stop capture, or revoke the optional LinkedIn permission in Chrome.</li>
-    <li>Uninstall the extension to remove its extension storage.</li>
-    <li>Email support@minus.team to request deletion of support correspondence. Data you sent to TypeSafe must be addressed under your TypeSafe agreement.</li>
-  </ul>
-
-  <h2>Limited use</h2>
-  <p>Information is used for the disclosed evidence-review functionality, related support, and consented measurement of feature use and reliability. It is not sold, used for personalized advertising, or used to determine creditworthiness or eligibility for lending. CriteriaCue's handling and transfer of user data adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
-
-  <h2>This policy website</h2>
-  <p>This page contains no tracking scripts, analytics, or forms. This policy website uses GitHub Pages for hosting. GitHub logs and stores visitors’ IP addresses for security purposes, including visits made without signing in. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub Privacy Statement</a>.</p>
-
-  <h2>Changes and contact</h2>
-  <p>We will update this policy when the product's data practices change. Material changes will be disclosed before they take effect where required. The effective date above identifies the current policy.</p>
-  <p class="contact">For privacy questions or support, contact <a href="mailto:support@minus.team">support@minus.team</a>.<br><span class="meta">JEV-NATIVE describes the architecture. It does not indicate TypeSafe partnership, certification, or endorsement. CriteriaCue is not affiliated with or endorsed by LinkedIn.</span></p>
-</main>
-</body>
-</html>
+  </style></head><body><main><div class="brand">CriteriaCue · V2</div>
+<h1>Privacy Policy</h1>
+<p class="meta">Operator: minus<br>Updated: November 2, 2026 · V2 / extension 0.2.29<br>Contact: <a href="mailto:support@minus.team">support@minus.team</a></p>
+<h2>What CriteriaCue does</h2>
+<p>CriteriaCue helps recruiters review authorized professional profiles against saved job requirements. It supports individual LinkedIn profiles and Chenglietong candidate details, English and Simplified Chinese, and up to five locally saved roles. V2 uses an email account and a platform AI service, currently free to registered users. You do not provide an AI API key. AI output assists human review and does not automatically rank, reject, hire or contact candidates.</p>
+<h2>Accounts and login email</h2>
+<p>We store your email address, account ID and creation time in our application database. Resend sends one-time login codes from auth.minus.team. Codes expire after 10 minutes; our database stores a code hash, expiry, attempt count and used status. Old code records are cleaned up when new codes are requested. We store a hash of the login token on the server; the extension stores its login token locally on your browser. A login is valid for 30 days and renews during active use. Signing out revokes that session. Email is used for authentication, service access and usage protection, not automatic marketing enrollment.</p>
+<h2>Roles and job descriptions</h2>
+<p>Role titles, original job descriptions (JDs), your edited requirements, language and preferences are stored in local Chrome extension storage, not synced by CriteriaCue. Creating a role from a JD sends the original JD and interface language through our backend to the AI provider. Detailed analysis sends the saved role, original JD, final requirements and currently read professional information. Your final edited requirements guide that analysis. Preset sample roles are fictional and do not require an AI call to load.</p>
+<h2>Professional profile information</h2>
+<p>LinkedIn and Chenglietong each require a separate optional Chrome website permission. While the side panel is open, CriteriaCue reads professional sections of the current supported profile. LinkedIn capture progresses as you scroll through basic professional information, About, Experience and Education. Chenglietong reads the loaded professional profile sections once stable, including available work, projects, education, qualifications, languages, skills and self-evaluation. Missing education does not imply that the candidate lacks education.</p>
+<p>Professional text can include a name, headline, general location, employers, work history and education. Chenglietong age, gender, salary, contact details and non-professional header fields are excluded from model inputs. We do not use device geolocation, read messages or login credentials, open other candidate profiles, scroll or expand sections for you, or collect general browsing history. Profile URLs and reading boundaries are used locally to validate the current profile and prevent stale or duplicate processing; the profile URL is not part of model inputs.</p>
+<h2>AI processing and service providers</h2>
+<p>Quick review sends the read professional text and final requirements to our backend for processing. Requested detailed analysis sends the saved JD, final requirements and read professional text. These requests pass over HTTPS through the MINUS backend hosted by Railway to Alibaba Cloud Bailian. The backend and PostgreSQL database are in Singapore; the currently configured Bailian API uses a Beijing-region endpoint. The decision model performs quick checks; a language model extracts role requirements and produces detailed analysis. Responses are treated as data, not executable code.</p>
+<p>Our application database does not store JDs, candidate text, profile URLs or analysis output. That content is processed transiently by our server and the AI provider; profile text and results also remain in extension runtime memory while needed. We do not intentionally write request or response bodies to application logs. Hosting, email and AI providers may process connection, delivery and operational metadata under their own terms. We do not promise that external providers have zero retention or that all processing takes place in Singapore. See <a href="https://railway.com/legal/privacy">Railway</a>, <a href="https://resend.com/legal/privacy-policy">Resend</a> and <a href="https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-policy">Alibaba Cloud</a> for their privacy information.</p>
+<h2>Task records and retention</h2>
+<p>We store task IDs, the account that submitted them, type (role extraction, quick review or detailed analysis), status and creation time for service operation, support and abuse limits. These are required service records, separate from optional analytics. One task can make multiple model requests. Current records do not include token counts or billing costs. You can see your recent 24-hour task counts in Settings.</p>
+<p>Accounts and task metadata currently have no fixed automatic deletion schedule. Expired login records are not necessarily deleted immediately; 30 days describes login validity. Contact support@minus.team to request account and associated service-record deletion. Deletion requires an operator process; there is no in-product account deletion button. Operational backups may retain copies until replaced or removed. We cannot recall information already sent to an external provider; related requests must also be handled under that provider's terms.</p>
+<h2>Your controls</h2>
+<ul><li>Auto-review is on by default. Turn it off in Settings to pause automatic model review. Close the side panel to stop further profile reading.</li><li>Grant or revoke LinkedIn and Chenglietong access separately. Use only material you are authorized to process.</li><li>Edit or delete local roles and inspect Profile text. Uninstalling removes extension-local storage but does not delete your server account or task records.</li><li>Detailed analysis runs when requested and can be cancelled. Cancellation cannot undo processing already completed.</li><li>Sign out to clear the local login and revoke the current server session.</li></ul>
+<h2>Optional usage analytics</h2>
+<p>Usage analytics are off until you actively enable them in Settings and grant the optional PostHog connection permission. PostHog US receives allowlisted feature actions, setup and reading milestones, task timings, fixed error categories, version, bounded counts and a random installation ID used to estimate repeat use. We do not include candidate text or identifiers, profile URLs, role titles or requirements, analysis judgments, credentials, feedback text or arbitrary errors. We do not enable session recording or automatic DOM, click or keyboard capture.</p>
+<p>The random ID identifies an installation, not a verified person. It is separate from the email account and is not intentionally joined to candidate data. All core features work with analytics off. Turning analytics off stops new transmissions, cancels pending requests where possible and clears the local ID. Previously received events remain subject to the project's retention settings until expiry or deletion. Copy the Measurement ID before disabling and email support@minus.team to request deletion. There is no persistent local event queue. Network providers necessarily receive IP addresses and connection metadata; analytics handling is subject to <a href="https://posthog.com/privacy">PostHog's privacy policy</a>.</p>
+<h2>Optional feedback</h2>
+<p>Feedback prepares an email draft or copies it to your clipboard. You review and send it yourself to support@minus.team. It contains your message, feedback type, version and entry point; candidate data, URLs, roles, results and credentials are not attached automatically. Our Tencent Enterprise Email support mailbox receives the sender address and normal email metadata when you send a message. We delete support correspondence within 90 days after the issue closes; you may request earlier deletion. Feedback does not subscribe you to marketing.</p>
+<h2>Limited use</h2>
+<p>We use data for the disclosed profile-review functionality, account operation, service protection, requested support and optional product measurement. We do not sell it or use it for personalized advertising or creditworthiness determinations. CriteriaCue's handling and transfer of user data adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+<h2>This policy website and changes</h2>
+<p>This page has no tracking scripts, analytics or forms. GitHub Pages hosts it and may log visitors' IP addresses for security; see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. We update this policy when data practices change. Older CriteriaCue releases used direct TypeSafe requests and user-supplied keys; this policy describes V2.</p>
+<p class="contact">Questions or deletion requests: <a href="mailto:support@minus.team">support@minus.team</a>.<br>CriteriaCue is not affiliated with or endorsed by LinkedIn, Liepin or its AI service providers.</p></main></body></html>
